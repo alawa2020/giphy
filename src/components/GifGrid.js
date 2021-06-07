@@ -1,35 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
-import { getGifs } from '../helpers/getGifs'
-import GifGridItem from './GifGridItem'
+import { getGifs } from "../helpers/getGifs";
+import useFetchGifs from "../hooks/useFetchGifs";
+import GifGridItem from "./GifGridItem";
 
+const GifGrid = ({ category }) => {
+  const { data: gifs, loading } = useFetchGifs(category);
 
+  console.log(gifs);
 
-const GifGrid = ({category}) => {
+  return (
+    <>
+      {loading && <p>Cargando </p>}
 
-    const [gifs, setGifs] = useState([])
+      <div className="gif-grid">
+        {gifs.map((gif) => (
+          <GifGridItem key={gif.id} {...gif} />
+        ))}
+        <h4>{category}</h4>
+      </div>
+    </>
+  );
+};
 
-    useEffect( ()=>{
-        getGifs(category).then( gifs =>{
-            setGifs(gifs)
-        })
-    },[category])
-
-    console.log(gifs)
-
-    return (
-
-        <div className="gif-grid">
-
-            {gifs.map( gif => (
-                <GifGridItem 
-                    key={gif.id}
-                    {...gif}
-                />
-            ))}
-            <h4>{category}</h4>
-        </div>
-    )
-}
-
-export default GifGrid
+export default GifGrid;
