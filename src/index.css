@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 30px 50px;
 }
 
 code {
@@ -15,4 +16,8 @@ code {
 *{
   background-color: rgb(63, 63, 63);
   color: rgb(161, 161, 161);
+}
+
+.gif-grid{
+  border: 2px solid gray;
 }

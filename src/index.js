@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import GifExpertApp from './GifExpertApp';
+
 
 ReactDOM.render(
 
-  <h1>jaja</h1>,
+  <GifExpertApp />,
   document.getElementById('root')
 );
