@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { getGifs } from '../helpers/getGifs'
+
+
 
 const GifGrid = ({category}) => {
+
+    useEffect( ()=>{
+        getGifs(category)
+    })
+
     return (
 
         <div className="gif-grid">

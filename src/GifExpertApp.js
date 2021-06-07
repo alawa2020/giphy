@@ -4,7 +4,7 @@ import AddCategory from "./components/AddCategory";
 import  GifGrid from "./components/GifGrid";
 
 const GifExpertApp = () => {
-  const [categories, setCategories] = useState(['Pokemon','Alita']);
+  const [categories, setCategories] = useState(['Alita']);
 
   return (
     <>
